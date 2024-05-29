@@ -16,4 +16,6 @@ export default function App() {
 
 const StyledH1 = styled.h1`
   color: red;
+  overflow: hidden;
+  inset: 0;
 `;
