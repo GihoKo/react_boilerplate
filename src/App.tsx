@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { useBookStore } from "./../store/useBookStore";
+import styled from 'styled-components';
+import { useBookStore } from './../store/useBookStore';
 
 export default function App() {
   const { books } = useBookStore((state) => state);
