@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -12,10 +12,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.js$/, /\.jsx$/],
+        test: /\.(js|jsx|ts|tsx)$/i,
+        exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          presets: ["@babel/preset-env", ["@babel/preset-react", { runtime: "automatic" }]],
+          presets: ["@babel/preset-env", ["@babel/preset-react", { runtime: "automatic" }, "@babel/preset-typescript"]],
         },
       },
       {
@@ -36,6 +37,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html",
@@ -43,6 +47,7 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   devServer: {
+    hot: true,
     port: 9000,
     open: true,
   },
