@@ -1,6 +1,6 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+var path = require("path");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin.CleanWebpackPlugin(),
   ],
   devServer: {
     hot: true,
