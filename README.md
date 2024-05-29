@@ -34,7 +34,7 @@
 
 - jest
 - ~~msw~~
-  storybook
+- storybook
 
 ### 빌드
 
