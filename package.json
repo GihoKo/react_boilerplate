@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "lint": "eslint --cache .",
+    "lint": "eslint .",
     "format": "prettier --write --cache .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -40,6 +40,7 @@
     "@storybook/test": "^8.1.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.11.0",
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
